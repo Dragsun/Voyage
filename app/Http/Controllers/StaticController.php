@@ -11,5 +11,6 @@ class StaticController extends Controller
     {
         dd(Fruit::all());
         return view('welcome');
+        //ceci est un commentaire
     }
 }
