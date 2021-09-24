@@ -32,27 +32,6 @@
 	<link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-	@foreach($fruits as $fruit)
-	<div class="d-flex">
-		{{$fruit->id}}
-		--
-		{{$fruit->title}}
-		--
-		{{$fruit->body}}
-		--
-		<a href="">VOIR</a>
-		--
-		<a href="">EDITER</a>
-		--
-
-		<form action="{{route('deleteFruit',$fruit->id)}}" method="post">
-			<button type="submit" class="btn btn-danger btn-block">Delete</button>
-			@csrf
-			@method('DELETE')
-		</form>
-	</div>
-	@endforeach
-	<a href="{{route('createFruit')}}">CREER</a>
-
+	@yield('content')
 </body>
 </html>

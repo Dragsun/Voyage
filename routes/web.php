@@ -15,12 +15,5 @@ use App\Http\Controllers\StaticController;
 
 // Route::get('/',[StaticController::class,'home']);
 
-Route::prefix('fruits')->group(function()
-{
-	Route::get('/',[StaticController::class,'home']);
-	Route::get('create',[StaticController::class,'create'])->name('createFruit');
-	Route::post('store',[StaticController::class,'store'])->name('createData');
-	Route::delete('delete/{id}', [StaticController::class,'destroy'])->name('deleteFruit');
-	Route::get('fruit/{id}', [StaticController::class,'fruit'])->name('fruit');
-});
+Route::resource('fruit',StaticController::class);
 

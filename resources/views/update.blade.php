@@ -1,15 +1,15 @@
 @extends('base.layout')
 @section('content')
-	<form action="{{route('fruit.store')}}" method="POST">
+	<form action="{{route('fruit.update', $fruit->id)}}" method="POST">
 		@csrf
-		@method('POST')
+		@method('PUT')
 		<div class="mb-3">
 			<label class="form-label">title</label>
-			<input type="text" name="title">
+			<input type="text" name="title" value="{{$fruit->title}}">
 		</div>
 		<div class="mb-3">
 			<label class="form-label">Body</label>
-			<textarea name="body"></textarea>
+			<textarea name="body">{{$fruit->body}}</textarea>
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
