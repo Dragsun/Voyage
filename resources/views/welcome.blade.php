@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
     </head>
     <body class="antialiased">
-        @dd(App\Models\Fruits::all())
+
 
         @include('components.footer')
     </body>
